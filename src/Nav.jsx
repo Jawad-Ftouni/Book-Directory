@@ -5,6 +5,7 @@ const Nav = () => {
             <img 
             src={ require('./logo.jpg') }
             className="logo"
+            alt='logo'
             />
              <Link to="/">Home</Link>
 
