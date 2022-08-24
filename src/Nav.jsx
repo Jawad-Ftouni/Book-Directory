@@ -8,14 +8,14 @@ const Nav = () => {
             />
              <Link to="/">Home</Link>
 
-             <div class="menu-container">
-  <ul class="dropdown-menu"> 
-    <li class="dropdown-menu-item">
-      <button class="dropbtn">Add Book</button>
-      <ul class="dropdown-menu-list">
+             <div className="menu-container">
+  <ul className="dropdown-menu"> 
+    <li className="dropdown-menu-item">
+      <button className="dropbtn">Add Book</button>
+      <ul className="dropdown-menu-list">
        
-        <li class="dropdown-menu-list-item"> <Link to="/addBooka">Add Book (18+)</Link></li>
-         <li class="dropdown-menu-list-item" ><Link to="/addBookK1">Add Book</Link></li>
+        <li className="dropdown-menu-list-item"> <Link to="/addBooka">Add Book (18+)</Link></li>
+         <li className="dropdown-menu-list-item" ><Link to="/addBookK1">Add Book</Link></li>
 
        </ul>
      </li>

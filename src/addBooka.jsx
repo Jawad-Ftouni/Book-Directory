@@ -8,10 +8,10 @@ import { useNavigate } from 'react-router-dom';
 const AddBooka = () => {
 
     const [language,setLanguage] = useState("");
-    const [book_Name,setBook_Name] = useState();
-    const [author,setauthor] = useState();
+    const [book_Name,setBook_Name] = useState("");
+    const [author,setauthor] = useState("");
     // const [available,setavailable] = useState();
-    const [price,setPrice] = useState();
+    const [price,setPrice] = useState("");
     const navigate = useNavigate();
 
     const handlesubmit = (e)=>{
@@ -39,6 +39,7 @@ const AddBooka = () => {
 
     
     return ( 
+      
       <div className="img">
 
         <div className="create">

@@ -12,7 +12,7 @@ const BookDetails = () => {
     useEffect(()=>{
          axios.get("http://localhost:3001/api/AdultsBook")
         .then((res)=>setBooksList(res.data))
-        
+        .then((res)=>console.log(res.data))
     },[])
      
     // const handleClick = ()=>{

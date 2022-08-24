@@ -376,3 +376,32 @@ td{
   color: rgb(148, 42, 42);
   
 }
+
+.buy-btn{
+  display: inline-block;
+  background-color:black;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 10px;
+  border: 1px white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.buy-btn:hover{
+  background-color: green;
+}
+
+.view-btn{
+  display: inline-block;
+  background-color:black;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 10px;
+  border: 1px white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.view-btn:hover{
+  background-color: #ccc;
+}

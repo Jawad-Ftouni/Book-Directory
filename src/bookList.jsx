@@ -1,9 +1,15 @@
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
+import { useDispatch,useSelector } from 'react-redux';
+import { addToBalance } from './redux/balance'
 
 const BookList = ({books}) => {
 
+const balancee = useSelector((state)=>state.balanceR)
+const dispatch = useDispatch();
   const navigate = useNavigate();
+
+console.log(balancee)
 
     const deleteValues = (id) => {
         console.log(id);
@@ -17,6 +23,7 @@ const BookList = ({books}) => {
             console.log(error);
           });
       };
+      
     //   const updatevalues = (id)=>{
     //     axios.put(`http://localhost:3001/api/AdultsBook/${id}`,{
     //      language: language,
@@ -60,10 +67,13 @@ const BookList = ({books}) => {
                         {Book.author}
                         </td>
                         <td width="25%">
-                        {Book.price}
+                        {Book.price}$
                         </td>
                         <td width="25%">
                         {Book.language}
+                        </td>
+                        <td width="25%">
+                        <button className="buy-btn" onClick={()=>{dispatch(addToBalance(Book.price))}}>Buy</button>
                         </td>
                         <td width="25%">
                         <button className="Edit-btn" onClick={()=>{navigate(`/EditABook/${Book._id}`)}}>Edit</button>
@@ -75,7 +85,10 @@ const BookList = ({books}) => {
                     </tr>
 
                ))}
-                
+                <tr width="25%">
+                <td><button className="view-btn" onClick={()=>{navigate('/myBalance')}}>Balance</button></td>
+
+                </tr>
                </tbody>
             </table>
             
