@@ -87,7 +87,7 @@ const AddBooka = () => {
                  </div>
                 
                  <button type="submit" className="sub-btn">Save Book</button>
-                 <button  className="cancle-btn" onClick={()=>{navigate('/home')}}>cancel</button>
+                 <button  className="cancle-btn" onClick={()=>{navigate('/')}}>cancel</button>
                  
             </form>
             </div>

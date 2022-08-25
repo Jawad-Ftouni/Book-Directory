@@ -7,7 +7,7 @@ const Nav = () => {
             className="logo"
             alt='logo'
             />
-             <Link to="/">Home</Link>
+             <Link to="/home">Home</Link>
 
              <div className="menu-container">
   <ul className="dropdown-menu"> 
