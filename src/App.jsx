@@ -7,6 +7,7 @@ import BookList from "./bookDetails";
 import EditABook from "./editABook";
 import MyBalance from "./myBalance";
 import Login from "./logIn";
+import Register from "./register";
 function App() {
   return (
     <BrowserRouter>
@@ -15,6 +16,7 @@ function App() {
           <Nav />
 
           <Routes>
+            <Route path="/register" element={<Register />} exact />
             <Route path="/home" element={<Home />} exact />
             <Route path="/addBooka" element={<AddBooka />} exact />
             <Route path="/addBookK1" element={<AddBookK1 />} exact />
