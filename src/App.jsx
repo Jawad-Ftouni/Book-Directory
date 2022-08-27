@@ -23,6 +23,7 @@ function App() {
             <Route path="/bookList" element={<BookList />} exact />
             <Route path="/editABook/:id" element={<EditABook />} />
             <Route path="/myBalance" element={<MyBalance />} />
+            <Route path="/login" element={<Login />} exact />
           </Routes>
         </div>
       </div>

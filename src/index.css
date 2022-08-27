@@ -442,9 +442,8 @@ td {
 
 .login {
   display: flex;
-  align-content: center;
-  justify-content: center;
-  margin-top: 50px;
+  flex-direction: column;
+  gap:20px;
 }
 
 
@@ -484,5 +483,38 @@ td {
 }
 
 .background{
+  background-image: url(https://t3.ftcdn.net/jpg/02/18/94/96/240_F_218949611_gyFEam1ipgtbuDlQgyZFCJ27imbApfGL.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+    height: 557px;}
+
+.login1{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 40%;
+  margin-top: 40px;
+}
+.login2{
+  display: flex;
+  flex-direction: column;
+  border: solid black;
+  padding: 30px;
+  gap:20px;
   background-color: #ccc;
+
+}
+.login-img{
+  background-image: url(https://t4.ftcdn.net/jpg/04/01/72/31/240_F_401723106_v2U023YWYZIchrNFXrOcbKC0lui51Xtn.jpg);
+  background-repeat: no-repeat;
+    background-size: cover;
+    overflow-x: hidden;
+    margin-bottom: 0px;
+    height: 557px;
+
+}
+
+.end{
+  display:flex;
+  justify-content: flex-end;
 }
