@@ -8,6 +8,7 @@ import EditABook from "./editABook";
 import MyBalance from "./myBalance";
 import Login from "./logIn";
 import Register from "./register";
+import Okay from "./okay";
 function App() {
   return (
     <BrowserRouter>
@@ -24,6 +25,7 @@ function App() {
             <Route path="/editABook/:id" element={<EditABook />} />
             <Route path="/myBalance" element={<MyBalance />} />
             <Route path="/login" element={<Login />} exact />
+            <Route path="/welcome" element={<Okay />} exact/>
           </Routes>
         </div>
       </div>

@@ -20,7 +20,7 @@ const Register = () => {
   const [validName, setValidName] = useState(false);
   const [userFocus, setUserFocus] = useState(false);
 
-  const [pwd, setpwd] = useState("");
+  const [password, setPassword] = useState("");
   const [validPwd, setValidPwd] = useState(false);
   const [pwdFocus, setPwdFocus] = useState(false);
 
@@ -43,25 +43,25 @@ const Register = () => {
   }, [userName]);
 
   useEffect(() => {
-    const result = PWD_REGEX.test(pwd);
+    const result = PWD_REGEX.test(password);
     console.log(result);
-    console.log(pwd);
+    console.log(password);
     setValidPwd(result);
-    const match = pwd === matchPwd;
+    const match = password === matchPwd;
     setValidMatch(match);
-  }, [pwd, matchPwd]);
+  }, [password, matchPwd]);
 
   useEffect(() => {
     setEreMsg("");
-  }, [pwd, matchPwd, errMsg]);
+  }, [password, matchPwd, errMsg]);
 
   const handlesubmit = (e) => {
     e.preventDefault();
-    console.log(userName, pwd);
+    console.log(userName, password);
     const result = axios
-      .post("http://localhost:3001/api/user", {
+      .post("http://localhost:3001/api/user/register", {
         userName: userName,
-        pwd: pwd,
+        password: password,
       })
       .then((res) => {
         console.log(res.data);
@@ -117,17 +117,17 @@ const Register = () => {
                 <span className={validPwd ? "valid" : "hide"}>
                   <FontAwesomeIcon icon={faCheck} />
                 </span>
-                <span className={validPwd || !pwd ? "hide" : "invalid"}>
+                <span className={validPwd || !password ? "hide" : "invalid"}>
                   <FontAwesomeIcon icon={faTimes} />
                 </span>
               </label>
               <input
                 type="password"
-                id="pwd"
+                id="password"
                 required
-                value={pwd}
+                value={password}
                 onChange={(e) => {
-                  setpwd(e.target.value);
+                  setPassword(e.target.value);
                 }}
                 aria-invalid={validPwd ? "false" : "true"}
                 aria-describedby="pwdnote"

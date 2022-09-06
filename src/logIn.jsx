@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
@@ -6,23 +7,34 @@ const LogIn = () => {
    const userRef  = useRef();
         
    const [userName,setUserName] = useState('');
-   const [pwd,setPassword] = useState('');
+   const [password,setPassword] = useState('');
    const [errMsg,setErrMsg] = useState('');
    const [success, setSuccess] = useState('');
 
    const navigate = useNavigate();
 const handlesubmit = (e)=>{
     e.preventDefault();
-        console.log(userName,pwd);
-}
+        console.log(userName, password);
+         axios
+           .post("http://localhost:3001/api/user/login", {
+             userName: userName,
+              password: password,
+           })
+           .then((res) => {
+             console.log(res.data.token);
+             navigate("/welcome");
+           })
+           
+          }
 
 useEffect(()=>{
         userRef.current.focus();
 },[])
 
-useEffect(()=>{
-        setErrMsg('');
-},[userName,pwd])
+useEffect(() => {
+  setErrMsg("error");
+}, [userName, password]);
+
 
     return (
       <div className="login-img">
@@ -34,6 +46,7 @@ useEffect(()=>{
                 <label htmlFor="">UserName:</label>
                 <input
                   type="text"
+                  id="user-username"
                   value={userName}
                   ref={userRef}
                   autoComplete="off"
@@ -47,7 +60,8 @@ useEffect(()=>{
                 <label htmlFor="">Password:</label>
                 <input
                   type="password"
-                  value={pwd}
+                  id="user-password"
+                  value={password}
                   required
                   onChange={(e) => {
                     setPassword(e.target.value);
