@@ -21,11 +21,11 @@ const handlesubmit = (e)=>{
               password: password,
            })
            .then((res) => {
-             console.log(res.data.token);
+             
              navigate("/welcome");
            })
-           
           }
+          
 
 useEffect(()=>{
         userRef.current.focus();
